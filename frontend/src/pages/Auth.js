@@ -7,7 +7,7 @@ export default function Auth(){
     const handleLogin = () => {
         console.log(email, password);
         //post
-        fetch("http://localhost:3000/login", {
+        fetch("http://localhost:3000/auth/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
