@@ -10,6 +10,7 @@ router.post("/login", async (req, res) => {
         // Check if user exists in database
         const user = await User.findOne({ email });
         if (!user) {
+            console.log("User not found:", email);
             return res.status(404).json({ error: "User does not exist" });
         }
         
@@ -35,6 +36,7 @@ router.post("/signup", async (req, res) => {
         // Check if user already exists
         const existingUser = await User.findOne({ email });
         if (existingUser) {
+            console.log("User already exists:", email);
             return res.status(400).json({ error: "User already exists" });
         }
         
