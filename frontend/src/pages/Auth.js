@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Auth() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [mode, setMode] = useState("login");
+  const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -14,7 +16,12 @@ export default function Auth() {
         body: JSON.stringify({ email, password }),
       });
       const data = await response.json();
-      alert(data.message);
+      if (response.ok) {
+        alert(data.message);
+        navigate("/home"); // Navigate to home on successful login
+      } else {
+        alert(data.error || "Login failed");
+      }
     } catch (err) {
       console.error("Login error:", err);
     }

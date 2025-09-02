@@ -25,6 +25,7 @@
     "bootstrap": "^5.3.8",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "react-router-dom": "^6.23.1",
     "render": "^0.1.4"
   }
 }
