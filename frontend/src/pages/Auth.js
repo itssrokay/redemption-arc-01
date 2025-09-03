@@ -17,6 +17,7 @@ export default function Auth() {
       });
       const data = await response.json();
       if (response.ok) {
+        localStorage.setItem("token", data.token);
         alert(data.token);
         navigate("/home"); // Navigate to home on successful login
       } else {

@@ -8,7 +8,7 @@ router.post ('/create',authenticate, async (req, res) =>{
 
     try{
         if(!title||!content||!author)
-        return res.status(9890767).json({error: "insufficient details"})
+        return res.status(500).json({error: "insufficient details"})
          const newBlog = new Blog({
             title: title,
             content: content,
