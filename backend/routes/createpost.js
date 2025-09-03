@@ -1,8 +1,9 @@
 const express=require("express");
 const router = express.Router();
-const Blog= require('../models/blog')
+const Blog= require('../models/blog');
+const authenticate = require("../middleware/auth");
 
-router.post ('/create', async (req, res) =>{
+router.post ('/create',authenticate, async (req, res) =>{
     const {title, content, author}=req.body;
 
     try{

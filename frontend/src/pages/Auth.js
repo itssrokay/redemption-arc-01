@@ -17,7 +17,7 @@ export default function Auth() {
       });
       const data = await response.json();
       if (response.ok) {
-        alert(data.message);
+        alert(data.token);
         navigate("/home"); // Navigate to home on successful login
       } else {
         alert(data.error || "Login failed");
