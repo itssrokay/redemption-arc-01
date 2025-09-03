@@ -4,6 +4,7 @@ const app = express();
 const mongoose= require("mongoose");
 app.use(cors());
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 require('dotenv').config();
 
 mongoose.connect(process.env.MONGO_URI)
@@ -17,3 +18,4 @@ app.get("/", (req, res) => {
     res.send("Hello World");
 });
 app.use("/auth", require("./routes/login"));
+app.use("/post", require("./routes/createpost"));
