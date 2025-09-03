@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const User = require("../models/users"); // Add this line
+const User = require("../models/user"); // Add this line
 
 
 router.post("/login", async (req, res) => {
