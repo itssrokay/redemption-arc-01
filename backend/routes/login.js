@@ -19,7 +19,7 @@ router.post("/login", async (req, res) => {
             return res.status(401).json({ error: "Wrong password" });
         }
         
-        // Login successfull
+        // Login successful
         console.log("Login successful for:", email);
         const token=jwt.sign(
             {
