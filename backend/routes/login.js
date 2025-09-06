@@ -14,7 +14,7 @@ router.post("/login", async (req, res) => {
             return res.status(404).json({ error: "User does not exist" });
         }
         
-        // Check if password matches
+        // Checking if password matches
         if (user.password !== password) {
             return res.status(401).json({ error: "Wrong password" });
         }
